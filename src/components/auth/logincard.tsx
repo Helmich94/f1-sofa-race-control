@@ -1,3 +1,4 @@
+import { FcGoogle } from "react-icons/fc";
 import { useState } from "react";
 import { signInAnonymously, signInWithPopup } from "firebase/auth";
 
@@ -73,7 +74,7 @@ export default function LoginCard() {
           onClick={handleGoogleLogin}
           disabled={isLoading}
         >
-          <span className="google-icon">G</span>
+         <FcGoogle className="google-icon" />
 
           {loadingMethod === "google"
             ? "Google openen..."

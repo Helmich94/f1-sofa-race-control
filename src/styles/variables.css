@@ -1,0 +1,37 @@
+:root {
+  /* Brand Colors */
+  --color-primary: #E10600;
+  --color-primary-hover: #ff2a22;
+
+  --color-background: #0D0D0D;
+  --color-surface: #181B22;
+  --color-surface-light: #232730;
+
+  --color-text: #FFFFFF;
+  --color-text-secondary: #A8ADB7;
+
+  --color-success: #29d45c;
+  --color-warning: #ffb000;
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 26px;
+
+  /* Shadows */
+  --shadow-card:
+    0 15px 45px rgba(0,0,0,.45);
+
+  --shadow-red:
+    0 0 60px rgba(225,6,0,.18);
+
+  /* Animation */
+
+  --transition-fast: .15s;
+  --transition-normal: .25s;
+  --transition-slow: .45s;
+
+  /* Width */
+
+  --login-width: 420px;
+}
