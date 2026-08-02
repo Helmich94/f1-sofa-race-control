@@ -83,7 +83,7 @@
 
   width: min(100%, var(--login-width));
 
-  padding: 48px 36px;
+  padding: 28px 36px 48px;
 
   border-radius: var(--radius-lg);
 
@@ -129,29 +129,19 @@
 }
 
 .brand-mark {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 86px;
-  height: 54px;
-  margin-bottom: 24px;
-  color: #ffffff;
-  font-size: 31px;
-  font-weight: 900;
-  font-style: italic;
-  letter-spacing: -4px;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-primary-light)
-  );
-  border-radius: 12px 4px 12px 4px;
-  box-shadow: 0 12px 30px rgba(225, 6, 0, 0.28);
-  transform: skewX(-8deg);
-}
 
-.brand-mark span {
-  transform: skewX(8deg);
+  width: auto;
+  height: auto;
+
+  margin: 0 auto 12px;
+
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  transform: none;
 }
 
 .login-title {
@@ -338,7 +328,7 @@
 
 .login-subtitle {
   max-width: 320px;
-  margin: 16px auto 32px;
+  margin: 0 auto 28px;
   text-align: center;
   line-height: 1.65;
 }
@@ -353,7 +343,7 @@
 
 .login-divider {
   width: 100%;
-  margin: 44px 0 40px;
+  margin: 15px 0;
 }
 
 .login-error {
@@ -362,7 +352,7 @@
 }
 
 .login-footer {
-  margin: 34px 0 0;
+  margin: 15px 0 0;
   text-align: center;
 }
 
@@ -371,4 +361,11 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+}
+
+.brand-logo {
+  width: 250px;
+  height: auto;
+  display: block;
+  margin-bottom: -40px;
 }

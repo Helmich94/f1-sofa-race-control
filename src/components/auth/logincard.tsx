@@ -1,5 +1,6 @@
+import logo from "../../components/branding/logo.svg";
 import { FcGoogle } from "react-icons/fc";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { signInAnonymously, signInWithPopup } from "firebase/auth";
 
 import { auth, googleProvider } from "../../firebase/config";
@@ -14,8 +15,22 @@ export default function LoginCard() {
 
   const [error, setError] = useState("");
 
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const startAmbience = async () => {
+  if (!audioRef.current) return;
+
+  audioRef.current.volume = 0.1;
+
+  try {
+    await audioRef.current.play();
+  } catch (error) {
+    console.warn("Audio kon niet worden gestart:", error);
+  }
+};
+
   const handleGoogleLogin = async () => {
     try {
+    await startAmbience();
       setError("");
       setLoadingMethod("google");
 
@@ -50,15 +65,19 @@ export default function LoginCard() {
 
   return (
     <section className="login-card">
-      <div className="brand-mark" aria-hidden="true">
-        <span>F1</span>
-      </div>
+     <div className="brand-mark">
+  <img
+    src={logo}
+    alt="F1 Sofa Race Control"
+    className="brand-logo"
+  />
+</div>
 
       <h1 className="login-title">
-        F1 Sofa
+        
         <br />
         <span className="login-title-accent">
-          Race Control
+          
         </span>
       </h1>
 
@@ -107,6 +126,13 @@ export default function LoginCard() {
           Race Control online
         </span>
       </p>
+
+      <audio
+        ref={audioRef}
+        src="/audio/pitlane-ambience.mp3"
+        loop
+        preload="auto"
+      />
     </section>
   );
 }
